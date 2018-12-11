@@ -1,3 +1,8 @@
+authors = ["Drvi <tomas.drvostep@gmail.com>"]
+name = "PreprocessingRecipes"
+uuid = "eb52edbc-fd2a-11e8-2812-9ffd468194d0"
+version = "0.1.0"
+
 [deps]
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
 MixedModels = "ff71e718-51f3-5ec2-a782-8ffcbfa3c316"
