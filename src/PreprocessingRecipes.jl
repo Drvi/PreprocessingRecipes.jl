@@ -8,7 +8,7 @@ module PreprocessingRecipes
     #using MixedModels
     #using NearestNeighbors
 
-    export recipe, add_roles,
+    export recipe, add_roles, fit!, transform,
            step_standardize!, step_selection!, step_scale!, step_center!, step_closure!,
            step_function!, step_powertransform!, step_enumerate!, step_struct!
 
