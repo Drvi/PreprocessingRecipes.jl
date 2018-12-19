@@ -2,7 +2,7 @@ struct Standardizer{T} <: Number
     avg::T
     std::T
 end
-Standardizer(x::Vector{T}) where T = (mu = mean(x); Standardizer(mu, stdm(x, mu)))
+Standardizer(x::Vector{T}) where T = (mu = mean(x); Standardizer(mu, std(x, mean=mu, corrected=true)))
 Standardizer(x::Vector{T}; robust=false) where T = Standardizer(x)
 Standardizer(x::Vector{T}; robust=true) where T = (mu = median(x); Standardizer(mu, 1.482602median(abs.(x .- mu))))
 (s::Standardizer)(x::Vector) = (x .- s.avg) ./ (s.std + eps(s.std))
