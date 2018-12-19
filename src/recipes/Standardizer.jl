@@ -33,7 +33,7 @@ function fit!(s::StepStandardize, df)
     s.params = Dict(col => Standardizer(s.prehook(df[col])) for col in getselectionkeys(df, s.selections))
     s.trained = true
 end
-function step_standardize!(r::Recipe, s...; robust=false, skip=false, prehook=identity)
+function step_standardize!(r::Recipe, s...; robust::Bool=false, skip::Bool=false, prehook=identity)
     push!(r.steps,
           StepStandardize([s...],
                           nothing,

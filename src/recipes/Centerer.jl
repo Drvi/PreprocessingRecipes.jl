@@ -28,7 +28,7 @@ function fit!(s::StepCenterer, df)
     s.params = Dict(col => Centerer(s.prehook(df[col])) for col in getselectionkeys(df, s.selections))
     s.trained = true
 end
-function step_center!(r::Recipe, s...; robust=false, abs=false, skip=false, prehook=identity)
+function step_center!(r::Recipe, s...; robust::Bool=false, abs::Bool=false, skip::Bool=false, prehook=identity)
     push!(r.steps,
           StepCenterer([s...],
                        nothing,

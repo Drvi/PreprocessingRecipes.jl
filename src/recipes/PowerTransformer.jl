@@ -57,7 +57,7 @@ function fit!(s::StepPowerTransform, df)
     s.trained = true
 end
 
-function step_powertransform!(r::Recipe, s...; skip=false, prehook=identity)
+function step_powertransform!(r::Recipe, s...; skip::Bool=false, prehook=identity)
     push!(r.steps,
           StepPowerTransform([s...],
                              nothing,

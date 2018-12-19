@@ -14,7 +14,7 @@ end
 function transform!(s::StepSelector, df)
     delete!(df, setdiff(names(df), s.params))
 end
-function step_selection!(r::Recipe, s...; skip=false)
+function step_selection!(r::Recipe, s...; skip::Bool=false)
     push!(r.steps,
           StepSelector([s...],
                        nothing,

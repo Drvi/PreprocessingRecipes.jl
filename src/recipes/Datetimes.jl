@@ -51,7 +51,7 @@ function update!(roles::Dict, step::StepDate)
     roles
 end
 
-function step_date!(r::Recipe, s...; features=[year, month, dayofweek], keep=false, roles=nothing, skip=false)
+function step_date!(r::Recipe, s...; features=[year, month, dayofweek], keep::Bool=false, roles=nothing, skip::Bool=false)
     push!(r.steps,
           StepDate([s...],
                    nothing,
@@ -61,7 +61,7 @@ function step_date!(r::Recipe, s...; features=[year, month, dayofweek], keep=fal
                    keep,
                    roles))
 end
-function step_date!(r::Recipe; features=[year, month, dayofweek], keep=false, roles=nothing, skip=false)
+function step_date!(r::Recipe; features=[year, month, dayofweek], keep::Bool=false, roles=nothing, skip=false)
     push!(r.steps,
           StepDate([if_eltype(Date)],
                    nothing,
@@ -73,7 +73,7 @@ function step_date!(r::Recipe; features=[year, month, dayofweek], keep=false, ro
 end
 
 
-function step_datetime!(r::Recipe, s...; features=[year, month, dayofweek, hour, minute, second], keep=false, roles=nothing, skip=false)
+function step_datetime!(r::Recipe, s...; features=[year, month, dayofweek, hour, minute, second], keep::Bool=false, roles=nothing, skip::Bool=false)
     push!(r.steps,
           StepDate([s...],
                    nothing,
@@ -83,7 +83,7 @@ function step_datetime!(r::Recipe, s...; features=[year, month, dayofweek, hour,
                    keep,
                    roles))
 end
-function step_datetime!(r::Recipe; features=[year, month, dayofweek, hour, minute, second], keep=false, roles=nothing, skip=false)
+function step_datetime!(r::Recipe; features=[year, month, dayofweek, hour, minute, second], keep::Bool=false, roles=nothing, skip::Bool=false)
     push!(r.steps,
           StepDate([if_eltype(DateTime)],
                    nothing,

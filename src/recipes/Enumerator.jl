@@ -85,7 +85,7 @@ function fit!(s::StepEnumerator, df)
     s.trained = true
 end
 
-function step_enumerate!(r::Recipe, s...; initlabels=nothing, expandinit=true, zerolabel=missing, skip=false, prehook=identity)
+function step_enumerate!(r::Recipe, s...; initlabels=nothing, expandinit::Bool=true, zerolabel=missing, skip::Bool=false, prehook=identity)
     initlabels===nothing && !expandinit && throw(error("initlabels !== nothing || expandinit == true"))
     push!(r.steps,
           StepEnumerator([s...],
