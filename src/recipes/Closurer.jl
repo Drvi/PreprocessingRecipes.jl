@@ -26,7 +26,8 @@ function fit!(s::StepClosure, df)
     s.params = Dict(col => Closure(s.get_params(s.prehook(df[col]))) for col in getselectionkeys(df, s.selections))
     s.trained = true
 end
-function step_closure!(r::Recipe, s...; get_params, apply, skip=false, prehook=identity)
+function step_closure!(r::Recipe, s...; get_params=nothing, apply=nothing, skip=false, prehook=identity)
+    get_params === nothing || apply === nothing && throw(error("`get_params` or `apply` kwargs not set for `step_closure!`"))
     push!(r.steps,
           StepClosure([s...],
                        nothing,

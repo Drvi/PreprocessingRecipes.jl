@@ -20,7 +20,8 @@ function fit!(s::StepStructor, df)
     s.params = Dict(col => s.t(s.prehook(df[col])) for col in getselectionkeys(df, s.selections))
     s.trained = true
 end
-function step_struct!(r::Recipe, s...; t, skip=false, prehook=identity)
+function step_struct!(r::Recipe, s...; t=nothing, skip=false, prehook=identity)
+    t === nothing && throw(error("No struct supplied to `step_structor!`"))
     push!(r.steps,
           StepStructor([s...],
                        nothing,

@@ -19,7 +19,8 @@ end
 function fit!(s::StepFunction, df)
     s.params = getselectionkeys(df, s.selections)
 end
-function step_function!(r::Recipe, s...; f, skip=false, prehook=identity)
+function step_function!(r::Recipe, s...; f=nothing, skip=false, prehook=identity)
+    f === nothing && throw(error("No function supplied to `step_function!`"))
     push!(r.steps,
           StepFunction([s...],
                        nothing,
