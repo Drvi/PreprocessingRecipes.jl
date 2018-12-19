@@ -2,7 +2,7 @@ struct Scaler{T} <: Number
     s::T
 end
 
-function Scaler(x::Vector{T}; robust::Bool=false) where T =
+function Scaler(x::Vector{T}; robust::Bool=false) where T
     s = robust ? 1.482602median(abs.(x .- median(x))) : std(x)
     Scaler(s)
 end
