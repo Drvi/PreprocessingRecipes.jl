@@ -1,6 +1,6 @@
 mutable struct StepFunction{S,F,G} <: AbstractStep
     selections::S
-    params::Vector{Symbol}
+    params::Union{Nothing, Vector{Symbol}}
     f::F
     trained::Bool
     skip::Bool
