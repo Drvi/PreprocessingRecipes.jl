@@ -1,9 +1,8 @@
 struct Centerer{T} <: Number
     s::T
 end
-Centerer(x::Vector{T}) where T = mean(x)
-Centerer(x::Vector{T}; robust=false) where T = Centerer(x)
-Centerer(x::Vector{T}; robust=true) where T = median(x)
+
+Centerer(x::Vector{T}; robust::Bool=false) where T = (m = robust ? median(x) : mean(x); Centerer(m))
 
 (s::Centerer)(x::Vector) = x .- s.s
 

@@ -1,15 +1,13 @@
-authors = ["Drvi <tomas.drvostep@gmail.com>"]
 name = "PreprocessingRecipes"
 uuid = "eb52edbc-fd2a-11e8-2812-9ffd468194d0"
+authors = ["Drvi <tomas.drvostep@gmail.com>"]
 version = "0.1.0"
 
 [deps]
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
-MixedModels = "ff71e718-51f3-5ec2-a782-8ffcbfa3c316"
-MultivariateStats = "6f286f6a-111f-5878-ab1e-185364afe411"
-NearestNeighbors = "b8a86587-4115-5ab1-83bc-aa920d37bbce"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 Optim = "429524aa-4258-5aef-a3af-852621145aeb"
-OrderedCollections = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
 PooledArrays = "2dfb63ee-cc39-5dd5-95bd-886bf059d720"
 Selections = "b5191172-bbc1-11e8-0edc-effacbed55cb"
 SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"

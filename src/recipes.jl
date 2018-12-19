@@ -51,6 +51,4 @@ function transform(r::Recipe, df)
     df
 end
 
-update!(roles::Dict, step::AbstractStep) = roles
-
 add_roles(r, roles...) = merge!(r.roles, Dict(roles))
