@@ -2,7 +2,7 @@ abstract type AbstractStep end
 
 # create a function that gets the resolved selection names (a step between resolve and select)
 
-mutable struct Recipe{T} where T
+mutable struct Recipe{T}
     df::T
     roles::Dict{Symbol,Vector{Symbol}}
     steps::Vector{AbstractStep}
