@@ -22,6 +22,7 @@ module PreprocessingRecipes
     include("recipes/Selector.jl")
     include("recipes/Standardizer.jl")
     include("recipes/Closurer.jl")
+    include("recipes/Functor.jl")
     include("recipes/Enumerator.jl")
     include("recipes/PowerTransformer.jl")
     include("recipes/Structor.jl")
