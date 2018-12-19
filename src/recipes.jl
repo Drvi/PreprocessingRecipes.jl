@@ -15,10 +15,11 @@ Base.getindex(r::Recipe, i...) = getindex(r.steps, i...)
 update!(roles::Dict, step::AbstractStep) = roles
 
 function recipe(df; roles...)
-    Recipe(df, resolveroles(df, Dict(roles)), Vector{AbstractStep}())
-end
-function recipe(df)
-    Recipe(df, Dict{Symbol,Vector{Symbol}}(), Vector{AbstractStep}())
+    if isempty(roles)
+        Recipe(df, Dict{Symbol,Vector{Symbol}}(), Vector{AbstractStep}())
+    else
+        Recipe(df, resolveroles(df, Dict(roles)), Vector{AbstractStep}())
+    end
 end
 
 function fit!(r::Recipe, df)
