@@ -22,6 +22,7 @@ function recipe(df; roles...)
     end
 end
 
+
 function fit!(r::Recipe, df)
     for step in r.steps
         fit!(step, df)
@@ -31,9 +32,14 @@ function fit!(r::Recipe, df)
     df
 end
 
-function transform(r::Recipe, df)
+fit(r::Recipe, df) = fit!(r, copy(df))
+
+
+function transform!(r::Recipe, df)
     for step in r.steps
         transform!(step, df)
     end
     df
 end
+
+transform(r::Recipe, df) = transform!(r, copy(df))
