@@ -1,7 +1,7 @@
 module PreprocessingRecipes
     import Selections: AbstractSelection, resolve, resolve_query, postprocess, selection, getfieldvec, reduce_renames
-    using Statistics
-    using Dates
+    using Statistics: mean, std
+    using Dates: year, month, dayofweek, hour, minute, second
 
     using Optim: minimizer, optimize
     #using MultivariateStats
